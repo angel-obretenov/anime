@@ -33,7 +33,7 @@ def anime_detailed(request, pk):
     data = api.get_detailed_anime(pk)
 
     context = {}
-    if not data.get("error"):
+    if not data.get("error") and data.get('score'):
         context['data'] = data
         context['liked'], context['disliked'] = get_anime_rating_percentage(data['score'])
 
