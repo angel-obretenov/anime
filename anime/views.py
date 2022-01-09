@@ -21,10 +21,10 @@ def anime_search(request):
     if not data.get("error") and data.get('results'):
         context['data'] = data["results"]
         context['last_page'] = data["last_page"]
-        # ratings = calculate_ratings([anime['score'] for anime in data["results"]])
+        ratings = calculate_ratings([anime['score'] for anime in data["results"]])
         
-        # context['labels'] = ratings.keys()
-        # context['values'] = ratings.values()
+        context['labels'] = ratings.keys()
+        context['values'] = ratings.values()
 
     return render(request, 'index.html', context)
 
