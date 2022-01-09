@@ -1,1 +1,1 @@
-# anime
+# Simple anime API
